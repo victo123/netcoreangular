@@ -12,7 +12,7 @@ npm packages to be installed.
 
 ### Installing
 
-To install required packges go to the angular client side app 'ClientApp' folder and run command 'npm install'
+To install required packges go to the angular client side app 'DemoApp' folder and run command 'npm install'
 
 ```
 npm install
@@ -21,12 +21,12 @@ npm install
 Create Database
 
 ```
-Run all the scripts in the Microsoft SQL server. Scripts can be found in file 'CartDb.sql'
+Run all the scripts in the Microsoft SQL server. Scripts can be found in file 'DemoAppSql.sql'
 ```
 
 Change the Connection String in CartDbContext.cs file
 
 ```
-.UseSqlServer("Server=MySqlServerName;Database=CartDb;Trusted_Connection=True;");
+.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=DemoApp;Trusted_Connection=True;");
 ```
 Run the project in visual studio normally
