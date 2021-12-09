@@ -1,0 +1,52 @@
+<div class="container" style="margin-top: 150px;">
+  <div class="d-flex" id="wrapper">
+    <p *ngIf="!products"><em>Loading...</em></p>
+    <div *ngIf="categories" class="border-end bg-white" id="sidebar-wrapper">
+      <div class="list-group list-group-flush" *ngFor="let category of categories">
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" [routerLink]="['/buyproduct']"
+          [queryParams]="{ cat: category.id }">
+          {{ category.categoryName }}
+        </a>
+      </div>
+    </div>
+    <div *ngIf="products" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 mb-2" *ngFor="let product of products">
+          <div class="item">
+            <div class="mb-r">
+              <div class="card card-cascade wider">
+                <a [routerLink]="['/productdetail', product.productId]">
+                  <div class="view overlay hm-white-slight text-center">
+                    <img [src]="product.productImageUrl" height="150" alt="" />
+                    <a>
+                      <div class="mask waves-effect waves-light"></div>
+                    </a>
+                  </div>
+                </a>
+                <div class="card-body text-center no-padding">
+                  <a class="text-muted">
+                    <h5>{{ product.productName }}</h5>
+                  </a>
+                  <p *ngIf="product.packaging" class="card-text">{{ product.packaging }}</p>
+                  <p class="card-text">{{ product.categoryName }}</p>
+                  <div class="card-footer">
+                    <span class="left">$ {{ product.productCost }}</span>
+                    <div *ngFor="let discount of product.discounts">
+                      <div *ngIf="discount.discount>0">
+                        <span class="left" style="font-size:13px;color:green;">{{ discount.discount }}% Off - {{
+                          discount.discountName }}</span>
+                      </div>
+                    </div>
+                    <div>
+                      <button (click)="add(product)" class="btn btn-primary">Add To Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

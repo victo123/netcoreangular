@@ -1,0 +1,30 @@
+<div style="margin-top: 150px;">
+  <h6>Bill</h6>
+<table class="table" cellspacing="0" style="max-height: 28px;">
+  <thead>
+    <tr>
+      <td>Product</td>
+      <td>Category</td>
+      <td>Quantity</td>
+      <td>Cost Per unit</td>
+      <td>Discount if any</td>
+      <td>Delivery Charges</td>
+      <td>Total Price per product</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of ProductsSelected">
+      <td>{{product.productName}}</td>
+      <td>{{product.categoryName}}</td>
+      <td>{{product.count}}</td>
+      <td>${{product.productCost}}</td>
+      <td>{{product.totalDiscount}}%</td>
+      <td>${{product.deliveryCharges}}</td>
+      <td>${{(product.totalPriceToPay)}}</td>
+    </tr>
+  </tbody>
+</table>
+<b>Total Bill Amount :</b> {{TotalBillAmmount}} <span *ngIf="AddedTotalBillDiscout" style="color:forestgreen"> Added extra 10% discount for bill more then $25000</span>
+<br/>
+<button type="button" class="btn btn-primary" (click)="pay()">Pay</button>
+</div>

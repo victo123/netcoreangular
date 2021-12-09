@@ -1,0 +1,58 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm fixed-top navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/buyproduct']">
+        <img src="/assets/Screen1/FarmFresh Logo.png" width="300" height="100" class="d-inline-block align-top" alt="">
+      </a>
+      <form class="form-inline ml-0 ml-md-3" (submit)="submitForm()">
+        <div class="input-group input-group-sm">
+          <input [(ngModel)]="datasubmit.query" name="query" class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">
+              <div>
+                <i class="fas fa-search btn-navbar"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </form>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <!-- <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li> -->
+          <!--<li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+          </li>-->
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a  [routerLink]="['/cart']">
+              <img src="/assets/Screen1/shopping-cart.png" width="40" height="30" class="d-inline-block align-top" alt="">
+              {{cartValue}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

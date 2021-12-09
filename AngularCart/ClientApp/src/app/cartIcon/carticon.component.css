@@ -1,0 +1,40 @@
+.OffersText {
+  font-size: 13px;
+  color: green;
+  padding: 20px
+}
+
+.GreenText {
+  font-size: 13px;
+  color: green;
+}
+
+.ActualCost {
+  text-decoration: line-through;
+  color: grey
+}
+
+.CartCount {
+  border: 1px solid rgba(0,0,0,.125);
+  background-color: white;
+  margin: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+
+.showScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.showScroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-y: scroll;
+  max-height: 500px
+}
+
+.no-padding-table tr{
+    padding:0rem!important;
+}
